@@ -71,7 +71,7 @@ export default function HeroSection() {
           </div>
           <div className="hero__readout-item">
             <span className="hero__readout-label">Source</span>
-            <span className="hero__readout-value">CDC &middot; BRFSS</span>
+            <span className="hero__readout-value">Data.gov</span>
           </div>
           <div className="hero__readout-item">
             <span className="hero__readout-label">Refresh</span>
