@@ -1,0 +1,102 @@
+.tsec {
+  position: relative;
+  background: var(--hd-bg);
+  padding: 100px 24px;
+}
+
+.tsec__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.tsec__header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.tsec__eyebrow {
+  display: inline-block;
+  font-family: var(--hd-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hd-mint);
+  margin-bottom: 14px;
+}
+
+.tsec__title {
+  font-family: var(--hd-font-display);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--hd-text);
+  margin: 0;
+}
+
+.tsec__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.tsec__card {
+  position: relative;
+  padding: 26px 20px;
+  background: var(--hd-panel);
+  border: 1px solid var(--hd-panel-border);
+  border-radius: var(--hd-radius);
+  text-align: center;
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: opacity 0.55s var(--hd-ease), transform 0.55s var(--hd-ease), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tsec--visible .tsec__card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.tsec__card:hover {
+  border-color: var(--hd-mint);
+  box-shadow: 0 0 34px -10px var(--hd-mint-glow);
+}
+
+.tsec__logo {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 14px;
+  border-radius: 12px;
+  background: var(--hd-mint-dim);
+  border: 1px solid var(--hd-mint-dim);
+  color: var(--hd-mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--hd-font-mono);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.tsec__name {
+  font-family: var(--hd-font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--hd-text);
+  margin: 0 0 6px;
+}
+
+.tsec__role {
+  font-family: var(--hd-font-body);
+  font-size: 0.76rem;
+  color: var(--hd-text-faint);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .tsec {
+    padding: 70px 16px;
+  }
+  .tsec__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

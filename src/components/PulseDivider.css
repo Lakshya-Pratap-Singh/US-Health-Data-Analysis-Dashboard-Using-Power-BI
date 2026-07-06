@@ -1,0 +1,82 @@
+.pulse {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.pulse--divider {
+  height: 40px;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 0 24px;
+  opacity: 0.85;
+}
+
+.pulse--ambient {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.pulse__label {
+  flex-shrink: 0;
+  font-family: var(--hd-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hd-mint);
+  white-space: nowrap;
+}
+
+.pulse__wave {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.pulse--ambient .pulse__wave {
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pulse__path {
+  fill: none;
+  stroke: var(--hd-mint);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: pulse-draw 3.2s var(--hd-ease) infinite;
+  filter: drop-shadow(0 0 6px var(--hd-mint-glow));
+}
+
+.pulse--divider .pulse__path {
+  stroke-width: 1.2;
+  opacity: 0.7;
+}
+
+@keyframes pulse-draw {
+  0% {
+    stroke-dashoffset: 900;
+  }
+  55% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -900;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse__path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

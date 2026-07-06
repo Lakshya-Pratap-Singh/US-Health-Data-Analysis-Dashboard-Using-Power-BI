@@ -1,0 +1,216 @@
+.dsec {
+  position: relative;
+  background: var(--hd-bg);
+  padding: 100px 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--hd-ease), transform 0.7s var(--hd-ease);
+}
+
+.dsec--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dsec__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.dsec__header {
+  max-width: 640px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.dsec__eyebrow {
+  display: inline-block;
+  font-family: var(--hd-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hd-mint);
+  margin-bottom: 14px;
+}
+
+.dsec__title {
+  font-family: var(--hd-font-display);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--hd-text);
+  margin: 0 0 14px;
+}
+
+.dsec__subtitle {
+  font-family: var(--hd-font-body);
+  color: var(--hd-text-dim);
+  line-height: 1.6;
+}
+
+.dsec__stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.dsec__stat-card {
+  padding: 16px;
+  background: var(--hd-panel);
+  border: 1px solid var(--hd-panel-border);
+  border-radius: var(--hd-radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dsec__stat-label {
+  font-family: var(--hd-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hd-text-faint);
+}
+
+.dsec__stat-value {
+  font-family: var(--hd-font-mono);
+  font-size: 0.95rem;
+  color: var(--hd-text);
+}
+
+.dsec__panel {
+  border: 1px solid var(--hd-panel-border);
+  border-radius: var(--hd-radius);
+  background: var(--hd-panel);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.dsec__toolbar {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  border-bottom: 1px solid var(--hd-panel-border);
+  flex-wrap: wrap;
+}
+
+.dsec__search {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+
+.dsec__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--hd-text-faint);
+  pointer-events: none;
+}
+
+.dsec__search-input {
+  width: 100%;
+  padding: 10px 14px 10px 36px;
+  border-radius: var(--hd-radius-sm);
+  border: 1px solid var(--hd-panel-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--hd-text);
+  font-family: var(--hd-font-body);
+  font-size: 0.88rem;
+}
+
+.dsec__search-input:focus-visible {
+  outline: 2px solid var(--hd-mint);
+  outline-offset: 1px;
+}
+
+.dsec__search-input::placeholder {
+  color: var(--hd-text-faint);
+}
+
+.dsec__download-btn {
+  font-family: var(--hd-font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #04140f;
+  background: var(--hd-mint);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--hd-radius-sm);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.dsec__download-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px -6px var(--hd-mint-glow);
+}
+
+.dsec__table-wrap {
+  overflow-x: auto;
+}
+
+.dsec__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--hd-font-mono);
+  font-size: 0.82rem;
+  min-width: 620px;
+}
+
+.dsec__table th {
+  text-align: left;
+  padding: 12px 18px;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hd-text-faint);
+  border-bottom: 1px solid var(--hd-panel-border);
+}
+
+.dsec__table td {
+  padding: 12px 18px;
+  color: var(--hd-text-dim);
+  border-bottom: 1px solid var(--hd-grid-line);
+}
+
+.dsec__table tr:hover td {
+  color: var(--hd-text);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dsec__table-value {
+  color: var(--hd-mint) !important;
+}
+
+.dsec__empty {
+  text-align: center !important;
+  color: var(--hd-text-faint) !important;
+  padding: 28px !important;
+}
+
+.dsec__table-note {
+  font-family: var(--hd-font-body);
+  font-size: 0.76rem;
+  color: var(--hd-text-faint);
+  padding: 14px 18px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .dsec__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .dsec {
+    padding: 70px 16px;
+  }
+  .dsec__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

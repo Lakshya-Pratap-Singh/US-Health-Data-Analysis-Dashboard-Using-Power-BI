@@ -1,0 +1,135 @@
+.pipe {
+  position: relative;
+  background: var(--hd-bg);
+  padding: 100px 24px 70px;
+}
+
+.pipe__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pipe__header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.pipe__eyebrow {
+  display: inline-block;
+  font-family: var(--hd-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hd-mint);
+  margin-bottom: 14px;
+}
+
+.pipe__title {
+  font-family: var(--hd-font-display);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  color: var(--hd-text);
+  margin: 0;
+}
+
+.pipe__timeline {
+  position: relative;
+  padding-left: 52px;
+  margin-bottom: 60px;
+}
+
+.pipe__spine {
+  position: absolute;
+  left: 19px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(var(--hd-mint), var(--hd-panel-border));
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 1.4s var(--hd-ease);
+}
+
+.pipe--visible .pipe__spine {
+  transform: scaleY(1);
+}
+
+.pipe__stage {
+  position: relative;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.6s var(--hd-ease), transform 0.6s var(--hd-ease);
+}
+
+.pipe--visible .pipe__stage {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pipe__stage:last-child {
+  margin-bottom: 0;
+}
+
+.pipe__node {
+  position: absolute;
+  left: -52px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--hd-bg);
+  border: 1.5px solid var(--hd-mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px var(--hd-bg);
+}
+
+.pipe__node-index {
+  font-family: var(--hd-font-mono);
+  font-size: 0.7rem;
+  color: var(--hd-mint);
+}
+
+.pipe__card {
+  background: var(--hd-panel);
+  border: 1px solid var(--hd-panel-border);
+  border-radius: var(--hd-radius);
+  padding: 18px 22px;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.25s ease;
+}
+
+.pipe__stage:hover .pipe__card {
+  border-color: var(--hd-mint);
+}
+
+.pipe__stage-label {
+  font-family: var(--hd-font-body);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--hd-text);
+  margin: 0 0 6px;
+}
+
+.pipe__stage-detail {
+  font-family: var(--hd-font-body);
+  font-size: 0.86rem;
+  color: var(--hd-text-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .pipe {
+    padding: 70px 16px 50px;
+  }
+  .pipe__timeline {
+    padding-left: 44px;
+  }
+  .pipe__node {
+    left: -44px;
+    width: 34px;
+    height: 34px;
+  }
+}
