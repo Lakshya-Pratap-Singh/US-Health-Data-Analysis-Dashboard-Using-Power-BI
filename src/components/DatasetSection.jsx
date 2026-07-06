@@ -12,7 +12,7 @@ const SAMPLE_ROWS = [
 ];
 
 const METADATA = [
-  { label: "Source", value: "CDC BRFSS" },
+  { label: "Source", value: "Data.gov" },
   { label: "Format", value: "CSV" },
   { label: "Rows", value: "487,500" },
   { label: "Columns", value: "9" },
